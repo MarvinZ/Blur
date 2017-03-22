@@ -102,7 +102,7 @@ export class PieChart {
               icon: 'money',
             }, {
               color: pieColor,
-              description: 'Players with wagers This Week',
+              description: 'Players with Wagers This Week',
               stats: this.chartsRaw.AffiliateStatisticsInfo.NumPlayerWageredThisWeek,
               icon: 'money',
             }
