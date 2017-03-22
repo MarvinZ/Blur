@@ -77,44 +77,44 @@ export class PieChart {
             // ];
             {
               color: pieColor,
-              description: 'CommissionPercentaje',
+              description: 'Commission Percentaje',
               stats: this.chartsRaw.AffiliateStatisticsInfo.CommissionPercentaje,
               icon: 'person',
             }, {
               color: pieColor,
-              description: 'CurrentBalance',
+              description: 'Current Balance',
               stats: this.chartsRaw.AffiliateStatisticsInfo.CurrentBalance,
               icon: 'money',
             }, {
               color: pieColor,
-              description: 'EarningLoses',
+              description: 'Earning Loses',
               stats: this.chartsRaw.AffiliateStatisticsInfo.EarningLoses,
               icon: 'face',
             }, {
               color: pieColor,
-              description: 'Last2WeekPlayerWinLoss',
+              description: 'Last 2 Weekd Player Win/Loss',
               stats: this.chartsRaw.AffiliateStatisticsInfo.Last2WeekPlayerWinLoss,
               icon: 'money',
             }, {
               color: pieColor,
-              description: 'LastWeekPlayerWinLoss',
+              description: 'Last Week Player Win/Loss',
               stats: this.chartsRaw.AffiliateStatisticsInfo.LastWeekPlayerWinLoss,
               icon: 'money',
             }, {
               color: pieColor,
-              description: 'NumPlayerWageredThisWeek',
+              description: 'Players with wagers This Week',
               stats: this.chartsRaw.AffiliateStatisticsInfo.NumPlayerWageredThisWeek,
               icon: 'money',
             }
             , {
               color: pieColor,
-              description: 'NumPlayers',
+              description: 'Total Number Players',
               stats: this.chartsRaw.AffiliateStatisticsInfo.NumPlayers,
               icon: 'person',
             }
             , {
               color: pieColor,
-              description: 'PlayerWinLoss',
+              description: 'Player Win/Loss',
               stats: this.chartsRaw.AffiliateStatisticsInfo.PlayerWinLoss,
               icon: 'money',
             }
