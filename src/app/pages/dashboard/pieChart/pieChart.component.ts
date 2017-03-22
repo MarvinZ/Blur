@@ -92,7 +92,7 @@ export class PieChart {
               icon: 'face',
             }, {
               color: pieColor,
-              description: 'Last 2 Weekd Player Win/Loss',
+              description: 'Last 2 Week Player Win/Loss',
               stats: this.chartsRaw.AffiliateStatisticsInfo.Last2WeekPlayerWinLoss,
               icon: 'money',
             }, {
