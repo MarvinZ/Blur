@@ -1,0 +1,125 @@
+<div>
+    <div title="Template Report" baCardClass="with-scroll">
+        <h1> {{ 'Template title' | translate:lang }}</h1>
+
+
+        <p>{{ today | localeDate:defaultLocale:'fullDate' }}</p>
+        <p>{{ pi | localeDecimal:defaultLocale:'1.5-5' }}</p>
+        <p>{{ value | localeCurrency:defaultLocale:currency:true:'1.2-2' }}</p>
+
+        <button class="btn btn-primary" (click)="change()">{{ 'Change' | translate:lang }}</button>
+        <form #myForm="ngForm" novalidate>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Select start date</label>
+                        <ng2-datepicker [options]="options" [(ngModel)]="date" name="date" class="form-control"></ng2-datepicker>
+
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Select end date</label>
+                        <ng2-datepicker [options]="options2" [(ngModel)]="date2" name="date2" class="form-control"></ng2-datepicker>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Preferences</label>
+                        <ba-multi-checkbox [(ngModel)]="checkboxModel" [propertiesMapping]="checkboxPropertiesMapping" name="checkboxModel"></ba-multi-checkbox>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Sports</label>
+                        <select name="ddlSports" class="form-control" style="height: 40px;" [(ngModel)]="ddlSports">
+                        <option *ngFor="let sport of sports" [value]="sport.value">{{sport.display}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Transaction Type</label>
+                        <select name="ddlTransType" class="form-control" style="height: 40px;" [(ngModel)]="ddlTransType">
+                        <option *ngFor="let tt of transactionTypes" [value]="tt.value">{{tt.display}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Currency</label>
+                        <select name="ddlCurrency" class="form-control" style="height: 40px;" [(ngModel)]="ddlCurrency">
+                        <option *ngFor="let cur of currencies" [value]="cur.value">{{cur.display}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-xs-4 form-group">
+                    <button class="btn btn-primary" (click)="go()">GO!</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="container">
+
+    <!--<div *ngIf="response?.CashFlowList?.length > 0">-->
+    <div *ngIf="response">
+        <h2>{{'Period' | translate:lang}} {{response.StartDate | date: 'MM/dd/yyyy'}} To {{response.EndDate | date: 'MM/dd/yyyy'}}</h2>
+        <p></p>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+
+                    <th>{{'Transaction' | translate:lang}}</th>
+                    <th>{{'Description' | translate:lang}}</th>
+                    <th>{{'Amount' | translate:lang}}</th>
+                    <th>{{'Balance' | translate:lang}}</th>
+                    <th>{{'Date' | translate:lang}}</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <!--<tbody>
+<tr *ngFor="let PreAff of response.CashFlowList">
+<td>
+{{PreAff.Transaction}}
+</td>
+<td>
+{{PreAff.Description}}
+</td>
+<td>
+{{PreAff.Amount}}
+</td>
+<td>
+{{PreAff.Balance}}
+</td>
+<td>
+{{PreAff.Date | date}}
+</td>
+</tr>
+</tbody>-->
+        </table>
+        <button class="btn btn-success" (click)="ExportToExcel()">Export to Excel</button>
+
+    </div>
+
+    <pre>
+{{response | json}}
+</pre>
+
+</div>
+
+<div *ngIf="loading">
+    <div id="preloader2">
+        <div></div>
+    </div>
+    <!--<app-loading> </app-loading>-->
+</div>
