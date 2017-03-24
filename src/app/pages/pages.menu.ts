@@ -237,6 +237,36 @@ export const PAGES_MENU = [
           // }
         ]
       },
+           {
+        path: 'agent',
+        data: {
+          menu: {
+            title: 'Agent',
+            icon: 'ion-grid',
+            selected: false,
+            expanded: false,
+            order: 502,
+          }
+        },
+        children: [
+          {
+            path: 'template',
+            data: {
+              menu: {
+                title: 'Template',
+              }
+            }
+          },
+          // {
+          //   path: 'smarttables',
+          //   data: {
+          //     menu: {
+          //       title: 'Smart Tables',
+          //     }
+          //   }
+          // }
+        ]
+      },
       // {
       //   path: 'maps',
       //   data: {

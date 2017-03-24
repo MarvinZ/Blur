@@ -28,6 +28,8 @@ export const routes: Routes = [
       { path: 'tables', loadChildren: 'app/pages/tables/tables.module#TablesModule' },
       { path: 'maps', loadChildren: 'app/pages/maps/maps.module#MapsModule' },
       { path: 'banking', loadChildren: 'app/pages/banking/banking.module#BankingModule' },
+      { path: 'agent', loadChildren: 'app/pages/agent/agent.module#AgentModule' },
+
 
 
     ]

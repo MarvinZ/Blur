@@ -42,7 +42,10 @@ export class BaPageTop extends Localization {
     });
   }
 
-
+  logOut() {
+    this.config.currentUser.id = 0;
+    alert('bye bye');
+  }
   changeLanguage(country: string) {
     let selectedcountry = this.languages.find(x => x.name === country);
     // console.log(selectedcountry.callingCode[0]);

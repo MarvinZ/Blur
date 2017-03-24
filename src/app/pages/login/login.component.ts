@@ -3,8 +3,7 @@ import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/fo
 import { ConfigService } from './../../config.service' 
 import { LoginResponse, ResponseStatus, ResponseAgentInfo, IUser } from './../../models/api';
 import { Router } from '@angular/router'
-
-
+import { Localization, LocaleService, TranslationService } from 'angular-l10n';
 
 
 import 'style-loader!./login.scss';
@@ -13,7 +12,7 @@ import 'style-loader!./login.scss';
   selector: 'login',
   templateUrl: './login.html',
 })
-export class Login {
+export class Login extends Localization {
 
   public form: FormGroup;
   // public email: AbstractControl;
@@ -30,7 +29,10 @@ export class Login {
 
 
 
-  constructor(fb: FormBuilder, public configService: ConfigService, private router: Router) {
+  constructor(fb: FormBuilder, public configService: ConfigService, private router: Router, public locale: LocaleService,
+    public translation: TranslationService) {
+        super(locale, translation);
+
     this.form = fb.group({
       // 'email': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
       'username': ['', Validators.compose([Validators.required, Validators.minLength(2)])],
@@ -58,11 +60,12 @@ export class Login {
 
           this.configService.currentUser = {
             id: this.tempRes.ResponseAgentInfo.IdAgent,
-            userName: 'Perrito',
+            userName: values.username,
             firstName: values.password,
-            lastName: 'Test',
+            lastName: 'Test Last name',
             userType: 'PPH',
-            selectedSubagent: 0
+            selectedSubagent: 0,
+            profilePictureUrl:'Hernan'
           }
 
           alert(this.tempRes.ResponseAgentInfo.IdAgent);

@@ -5,6 +5,7 @@ export class IUser {
     userName: string
     userType: string
     selectedSubagent: number
+    profilePictureUrl: string
 }
 
 export class LoginResponse {
