@@ -1,7 +1,17 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { ReportResponse } from './../models/api';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class MyTemplateService {
+  _url: string = "http://panmora.com/twapi/api/temp/"
+  constructor(private _http: Http) { }
+
 
   smartTableData = [
     {
@@ -538,6 +548,25 @@ export class MyTemplateService {
       isPercentUp: false
     }
   ];
+
+
+  // GET api/temp/GetWeeklyTransactions?idAgent={idAgent}&reportdate={reportdate}
+  GetWeeklyTransactions(idAgent: number, reportDate: string): Observable<any> {
+    let apiUrl = this._url + "GetWeeklyTransactions?idAgent=" + idAgent + "&reportDate=" + reportDate;
+    console.log(apiUrl);
+    return this._http.get(apiUrl)
+      .map((response: Response) => <any>response.json())
+      .do(data => console.log('All: ' + JSON.stringify(data)))
+      .catch(this.handleError);
+  }
+
+  private handleError(error: Response) {
+    // in a real world app, we may send the server to some remote logging infrastructure
+    // instead of just logging it to the console
+    console.error(error);
+    return Observable.throw(error.json().error || 'Server error');
+  }
+
 
   getData(): Promise<any> {
     return new Promise((resolve, reject) => {

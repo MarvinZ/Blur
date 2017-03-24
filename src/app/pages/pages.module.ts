@@ -6,7 +6,9 @@ import { NgaModule } from '../theme/nga.module';
 
 import { Pages } from './pages.component';
 
+
 import { LocalizationModule } from 'angular-l10n';
+
 
 
 
@@ -20,7 +22,8 @@ import { LocalizationModule } from 'angular-l10n';
   declarations: [Pages],
   providers: [
     // ConfigService
-    ]
+    ],
+  exports: []
 })
 export class PagesModule {
 }

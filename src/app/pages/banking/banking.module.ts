@@ -13,6 +13,7 @@ import { ToastModule } from 'ng2-toastr/ng2-toastr';
 import { LocalizationModule } from 'angular-l10n';
 import { DatePickerModule } from 'ng2-datepicker';
 import { DropdownModule, ModalModule } from 'ng2-bootstrap';
+import { LoadingModule } from './../loading/loading.module';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { DropdownModule, ModalModule } from 'ng2-bootstrap';
     DatePickerModule,
     DropdownModule.forRoot(),
     ModalModule.forRoot(),
+    LoadingModule
   ],
   declarations: [
     Banking,
