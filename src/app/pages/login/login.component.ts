@@ -61,7 +61,7 @@ export class Login extends Localization {
           this.configService.currentUser = {
             id: this.tempRes.ResponseAgentInfo.IdAgent,
             userName: values.username,
-            firstName: values.password,
+            firstName: values.username,
             lastName: 'Test Last name',
             userType: 'PPH',
             selectedSubagent: 0,

@@ -29,9 +29,8 @@ export const routes: Routes = [
       { path: 'maps', loadChildren: 'app/pages/maps/maps.module#MapsModule' },
       { path: 'banking', loadChildren: 'app/pages/banking/banking.module#BankingModule' },
       { path: 'agent', loadChildren: 'app/pages/agent/agent.module#AgentModule' },
-
-
-
+      { path: 'profile', loadChildren: 'app/pages/profile/profile.module#ProfileModule' },
+      
     ]
   }
 ];
