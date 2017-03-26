@@ -9,16 +9,23 @@
 
 
   <div class="search">
-
-    <!--<label for="ddlCountries">{{'Country and culture:' | translate:lang}}</label>-->
+<p>
 
     <select id="ddlCountries" name="ddlCountries" class="form-control" style="height: 40px;" [(ngModel)]="ddlCountries" (change)="changeLanguage($event.target.value)">
           <option *ngFor="let lang of languages" [value]="lang.name">{{lang.name}}</option>
             </select>
+</p>
+    <!--<label for="ddlCountries">{{'Country and culture:' | translate:lang}}</label>-->
+
   </div>
 
   <div class="search">
     <p>{{ today | localeDate:defaultLocale:'fullDate' }}</p>
+
+  </div>
+
+    <div class="search">
+    <p>{{'Welcome' | translate:lang}} {{ config.currentUser.firstName  }}</p>
 
   </div>
 
