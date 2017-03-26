@@ -30,7 +30,9 @@ export const routes: Routes = [
       { path: 'banking', loadChildren: 'app/pages/banking/banking.module#BankingModule' },
       { path: 'agent', loadChildren: 'app/pages/agent/agent.module#AgentModule' },
       { path: 'profile', loadChildren: 'app/pages/profile/profile.module#ProfileModule' },
-      
+      { path: 'settings', loadChildren: 'app/pages/settings/settings.module#SettingsModule' },
+
+
     ]
   }
 ];
