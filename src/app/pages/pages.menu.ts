@@ -27,6 +27,30 @@ export const PAGES_MENU = [
           }
         }
       },
+            {
+        path: 'profile',
+        data: {
+          menu: {
+            title: 'Profile',
+            icon: 'ion-android-home',
+            selected: false,
+            expanded: false,
+            order: 3
+          }
+        }
+      },
+            {
+        path: 'settings',
+        data: {
+          menu: {
+            title: 'Settings',
+            icon: 'ion-android-home',
+            selected: false,
+            expanded: false,
+            order: 4
+          }
+        }
+      },
       {
         path: 'editors',
         data: {

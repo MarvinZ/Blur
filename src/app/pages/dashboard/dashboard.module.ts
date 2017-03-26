@@ -22,6 +22,8 @@ import { TodoService } from './todo/todo.service';
 import { TrafficChartService } from './trafficChart/trafficChart.service';
 import { UsersMapService } from './usersMap/usersMap.service';
 import { AuthService } from './../login/login.service'
+import { LocalizationModule } from 'angular-l10n';
+
 
 
 @NgModule({
@@ -29,7 +31,8 @@ import { AuthService } from './../login/login.service'
     CommonModule,
     FormsModule,
     NgaModule,
-    routing
+    routing,
+    LocalizationModule
   ],
   declarations: [
     PopularApp,

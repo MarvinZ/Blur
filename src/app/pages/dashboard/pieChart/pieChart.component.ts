@@ -7,6 +7,7 @@ import 'easy-pie-chart/dist/jquery.easypiechart.js';
 import 'style-loader!./pieChart.scss';
 
 import { BaThemeConfigProvider, colorHelper } from '../../../theme';
+import { Localization, LocaleService, TranslationService } from 'angular-l10n';
 
 
 
@@ -17,7 +18,7 @@ import { BaThemeConfigProvider, colorHelper } from '../../../theme';
   templateUrl: './pieChart.html'
 })
 // TODO: move easypiechart to component
-export class PieChart {
+export class PieChart extends Localization {
 
   public chartsRaw: any
   public charts: Array<Object>;
@@ -26,7 +27,9 @@ export class PieChart {
   errorMessage: string
 
 
-  constructor(private _pieChartService: PieChartService, private auth: AuthService, private _baConfig: BaThemeConfigProvider) {
+  constructor(private _pieChartService: PieChartService, private auth: AuthService, private _baConfig: BaThemeConfigProvider, public locale: LocaleService,
+    public translation: TranslationService) {
+    super(locale, translation);
 
   }
 
@@ -80,43 +83,58 @@ export class PieChart {
               description: 'Commission Percentaje',
               stats: this.chartsRaw.AffiliateStatisticsInfo.CommissionPercentaje,
               icon: 'person',
+              isCurrency: false
             }, {
               color: pieColor,
               description: 'Current Balance',
               stats: this.chartsRaw.AffiliateStatisticsInfo.CurrentBalance,
               icon: 'money',
+              isCurrency: true
+
             }, {
               color: pieColor,
               description: 'Earning Loses',
               stats: this.chartsRaw.AffiliateStatisticsInfo.EarningLoses,
               icon: 'face',
+              isCurrency: true
+
             }, {
               color: pieColor,
               description: 'Last 2 Week Player Win/Loss',
               stats: this.chartsRaw.AffiliateStatisticsInfo.Last2WeekPlayerWinLoss,
               icon: 'money',
+              isCurrency: true
+
             }, {
               color: pieColor,
               description: 'Last Week Player Win/Loss',
               stats: this.chartsRaw.AffiliateStatisticsInfo.LastWeekPlayerWinLoss,
               icon: 'money',
+              isCurrency: true
+
             }, {
               color: pieColor,
               description: 'Players with Wagers This Week',
               stats: this.chartsRaw.AffiliateStatisticsInfo.NumPlayerWageredThisWeek,
               icon: 'money',
+              isCurrency: false
+
             }
             , {
               color: pieColor,
               description: 'Total Number Players',
               stats: this.chartsRaw.AffiliateStatisticsInfo.NumPlayers,
               icon: 'person',
+              isCurrency: false
+
             }
             , {
               color: pieColor,
               description: 'Player Win/Loss',
               stats: this.chartsRaw.AffiliateStatisticsInfo.PlayerWinLoss,
               icon: 'money',
+              isCurrency: true
+
             }
           ];
         //	this.toastr.success('This query took ' + (t1 - t0) + ' milliseconds..', 'Success');

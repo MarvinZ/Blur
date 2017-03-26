@@ -7,8 +7,9 @@
         <span class="percent"></span>
       </div>-->
       <div class="description">
-        <div>{{ chart.description }}</div>
-        <div class="description-stats">{{ chart.stats }}</div>
+        <div>{{ chart.description | translate:lang}}</div>
+        <div class="description-stats"> {{chart.isCurrency ? (chart.stats | localeCurrency:defaultLocale:currency:true:'1.2-2') : (chart.stats)}}
+          </div>
       </div>
       <i class="chart-icon i-{{ chart.icon }}"></i>
     </div>

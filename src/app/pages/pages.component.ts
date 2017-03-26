@@ -19,7 +19,7 @@ import { Localization, LocaleService, TranslationService } from 'angular-l10n';
       </div>
     </div>
     <footer class="al-footer clearfix">
-      <div class="al-footer-right">Created with <i class="ion-heart"></i></div>
+      <div class="al-footer-right">Created with <i class="ion-heart"></i><i class="ion-heart"></i></div>
 
     </footer>
     <ba-back-top position="200"></ba-back-top>
